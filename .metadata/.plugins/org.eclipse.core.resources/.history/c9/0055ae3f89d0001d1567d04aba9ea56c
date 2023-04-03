@@ -1,0 +1,48 @@
+package adminControl;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import Dao.Dao;
+import Model.adminAccount;
+
+@WebServlet("/adminMemberControl")
+public class adminMemberControl extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    public adminMemberControl() {
+        super();
+    }
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		String name = request.getParameter("name");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String idMember = request.getParameter("idMember");
+		Dao dao = new Dao();
+		adminAccount a = dao.checkAccountsMemBerExit(username);
+		if (a == null) {
+		dao.insertAdminMember(name, username, password);
+		}else {
+		}
+		List<adminAccount> list = dao.getAllAccountMember();
+		request.setAttribute("listAdc", list);
+		adminAccount ac = dao.getInfMember(idMember);
+		request.setAttribute("ac", ac);
+		request.getRequestDispatcher("Admin_Member.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}
