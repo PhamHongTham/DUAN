@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="Dao.categoryDao"/>
-    <fullyQualifiedTypeName name="Dao.ImageDao"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="Dao.UserDao"/>
-</qualifiedTypeNameHistroy>

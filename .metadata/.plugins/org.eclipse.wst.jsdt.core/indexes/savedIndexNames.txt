@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+D:\Tai lieu hoc ki 2 nam 3\CSDL_NC\git\DUAN_NHOM3_CSDLNC\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-966542204.index
-573141418.index
-2667261292.index
-1565991055.index
-1186118257.index
-4197273491.index
-2750098918.index
